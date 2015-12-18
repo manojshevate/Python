@@ -29,3 +29,11 @@ def global_local(v1):
 
 global_local(v1)
 print v1, v2
+
+
+# function with Default arguments
+def default_arguments(name = "Manoj"):
+    print "Hello {}!".format(name)
+
+default_arguments()
+default_arguments("India")

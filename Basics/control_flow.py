@@ -13,6 +13,7 @@ else:
 while True:
     str = raw_input("Enter string -")
     if str == 'quit':
+        # you can use continue instead of break to skip the current excecution
         break
     else:
         print "You Entered:", str

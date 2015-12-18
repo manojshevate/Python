@@ -7,3 +7,9 @@ def say_hello():
 
 say_hello()
 
+
+# Function with arguments
+def add(a, b):
+    return a + b
+
+print add(3, 4)

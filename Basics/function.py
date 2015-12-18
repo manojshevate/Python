@@ -32,8 +32,24 @@ print v1, v2
 
 
 # function with Default arguments
-def default_arguments(name = "Manoj"):
+def default_arguments(name="Manoj"):
     print "Hello {}!".format(name)
 
 default_arguments()
 default_arguments("India")
+
+
+# Function with keyword arguments
+def keyword_arguments(initial=10, *numbers, **keywords):
+    count = initial
+    for i in numbers:
+        count += i
+
+    for keyword in keywords:
+        count += keywords[keyword]
+
+    return count
+
+
+print keyword_arguments()
+print keyword_arguments(40,10,20,c=16,a=14)

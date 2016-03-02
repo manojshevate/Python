@@ -1,15 +1,18 @@
 import cherrypy
 import random
 import string
+import os, os.path
 
-class HelloWorld(object):
+class StringGenerator(object):
 	
 	"""docstring for HelloWorld"""
 
 	@cherrypy.expose
 	def index(self):
 		return """<html>
-          <head></head>
+          <head>
+          	<link href="/static/css/style.css" rel="stylesheet">
+          </head>
           <body>
             <form method="get" action="generate">
               <input type="text" value="8" name="length" />
@@ -33,7 +36,12 @@ class HelloWorld(object):
 if __name__ == '__main__':
 	conf = {
 		'/': {
-			'tools.sessions.on': True
+			'tools.sessions.on': True,
+			'tools.staticdir.root': os.path.abspath(os.getcwd())
+		},
+		'/static': {
+			'tools.staticdir.on': True,
+			'tools.staticdir.dir': './public'
 		}
 	}
-	cherrypy.quickstart(HelloWorld(), '/', conf);
+	cherrypy.quickstart(StringGenerator(), '/', conf);

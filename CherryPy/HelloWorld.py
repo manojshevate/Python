@@ -12,8 +12,8 @@ class HelloWorld(object):
 
 
 	@cherrypy.expose
-	def generate(self):
-		return ''.join(random.sample(string.hexdigits, 8))
+	def generate(self,length=8):
+		return ''.join(random.sample(string.hexdigits, int(length)))
 
 
 if __name__ == '__main__':

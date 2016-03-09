@@ -1,7 +1,6 @@
 # Python
 Basics of python
 
-
 ## TODO
 1. Add more sample code
 2. Cherrypy 
